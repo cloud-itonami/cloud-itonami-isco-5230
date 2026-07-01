@@ -1,0 +1,10 @@
+{:itonami.blueprint/id "cloud-itonami-isco-5230"
+ :itonami.blueprint/name "Independent Cashier & Ticketing Practice"
+ :itonami.blueprint/isco-08 "5230"
+ :itonami.blueprint/domain :retail/cashier-ticketing
+ :itonami.blueprint/license "AGPL-3.0-or-later"
+ :itonami.blueprint/social-impact [:local-jobs :customer-access :small-retail-viability]
+ :itonami.blueprint/governor :cashier-ticketing-governor
+ :itonami.blueprint/robotics true
+ :itonami.blueprint/required-technologies [:robotics :forms :identity :audit-ledger :bpmn]
+ :itonami.blueprint/status :public-oss}
