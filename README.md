@@ -63,17 +63,17 @@ human-in-the-loop interrupt/resume via checkpointing.
                                            +-> :hold               (:hard? true)
 ```
 
-- `src/cashier_ticketing/store.cljc` — `Store` protocol +
+- `src/cashier_ticketing/store.cljk` — `Store` protocol +
   `MemStore`: registered shifts, committed records, an append-only
   audit ledger.
-- `src/cashier_ticketing/advisor.cljc` — `Advisor` protocol;
+- `src/cashier_ticketing/advisor.cljk` — `Advisor` protocol;
   `mock-advisor` (deterministic, default) proposes a transact or
   reconcile operation from a request; `llm-advisor` wraps a
   `langchain.model/ChatModel` — either way the advisor only ever
   produces a `:propose`-effect proposal, never a committed record, and
   LLM parse failures always yield `confidence 0.0` (forces escalation,
   never fabricated confidence).
-- `src/cashier_ticketing/governor.cljc` —
+- `src/cashier_ticketing/governor.cljk` —
   `CashierTicketingGovernor/check`: a pure function, wired as its own
   `:govern` node. Hard invariants (unregistered shift, a proposal
   whose `:effect` isn't `:propose`) always route to `:hold`. Escalation
@@ -84,7 +84,7 @@ human-in-the-loop interrupt/resume via checkpointing.
   (`actor/approve!`), matching the README's robotics-premise statement
   that cash-drawer discrepancy above threshold, or a refund above a
   set limit, always require human sign-off.
-- `src/cashier_ticketing/actor.cljc` — `build-graph`, `run-request!`,
+- `src/cashier_ticketing/actor.cljk` — `build-graph`, `run-request!`,
   `approve!`: the `langgraph.graph/state-graph` wiring itself.
 
 ```bash
