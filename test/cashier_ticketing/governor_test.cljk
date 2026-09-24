@@ -1,5 +1,5 @@
 (ns cashier-ticketing.governor-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [cashier-ticketing.store :as store]
             [cashier-ticketing.governor :as governor]))
 
