@@ -1,5 +1,5 @@
 (ns cashier-ticketing.actor-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [cashier-ticketing.actor :as actor]
             [cashier-ticketing.store :as store]))
 
